@@ -68,7 +68,7 @@ const MenuLoader = (props) => {
             </div>
           </div>
 
-          <div className="cartArea">test</div>
+          <div className="cartArea"></div>
         </div>
       </div>
     </div>
