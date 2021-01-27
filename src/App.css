@@ -1,38 +1,306 @@
-.App {
-  text-align: center;
+/*                                         /
+/               GENERAL                    /
+/                                         */
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Roboto", "Oxygen",
+    "Ubuntu", "Cantarell", "Fira Sans", "Droid Sans", "Helvetica Neue",
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #2e3333;
+}
+* {
+  box-sizing: border-box;
+}
+/*                                         /
+/      BANDEAU SUPERIEUR DU HEADER         /
+/                                         */
+.header {
+  padding-left: 12px;
+  padding-right: 12px;
+}
+.Banner {
+  background-color: var(--main-bg-color);
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+.banner {
+  border-bottom: 1px solid #e9ebeb;
+}
+.bannerCenter {
+  margin: 0 auto;
+  max-width: 1200px;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
+.logo {
+  height: 55px;
 }
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+/*                                         /
+/               RESTAURANT                 /
+/                                         */
+.restaurantCenter {
+  margin: 0 auto;
+  margin-top: 40px;
+  max-width: 1200px;
+  display: flex;
+  flex-direction: row;
+  margin-bottom: 30px;
+}
+.restaurantInformation {
   display: flex;
   flex-direction: column;
+  flex: 1;
+  margin-right: 30px;
+}
+.restaurantInformationTitre {
+  font-size: 32px;
+  line-height: 26.7px;
+  margin-bottom: 35px;
+  font-weight: bold;
+}
+.restaurantInformationDescription {
+  font-size: 19px;
+  line-height: 28.8px;
+  color: #878a8a;
+}
+.restaurantCover {
+  width: 350px;
+  height: 200px;
+  border-radius: 10px;
+}
+.RestaurantPictureWrapper {
+  flex-shrink: 0;
+  min-width: 350px;
+  min-height: 200px;
+}
+/*                                         /
+/      ZONE AFFICHAGE DU MENU              /
+/                                         */
+.greyBlack {
+  background-color: #f3f5f5;
+}
+.wrapper {
+  margin: 0 auto;
+  max-width: 1200px;
+}
+.restaurantDetails {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.meals {
+  display: flex;
+  flex: 1;
+  flex-direction: column;
+}
+.courseTitle h2 {
+  color: #2e3333;
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: bold;
+  margin-top: 20px;
+  margin-bottom: 00px;
+}
+.courses {
+}
+/*                                         /
+/      ZONE AFFICHAGE DU PANIER            /
+/                                         */
+.cartArea {
+  width: 350px;
+  height: fit-content;
+  background-color: white;
+  border-radius: 5px;
+  margin-top: 30px;
+  box-shadow: 0px 22px 24px 0px rgba(43, 61, 61, 0.07);
+}
+.cartCard {
+  width: 100%;
+  padding: 10px;
+}
+.cartValidateButton {
+  height: 50px;
+  border-radius: 5px;
+  display: flex;
   align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
+}
+.cartValidateButtonDisabled {
+  background-color: #bbc4c3;
+  color: #8b9b9c;
+}
+
+.cartValidateButtonEnabled {
+  background-color: #03cdbd;
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.cartValidateButtonDisabled:hover {
+  cursor: not-allowed;
+}
+.emptyBasket {
+  color: #8b8e8e;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 110px;
+}
+.totalAndOther {
+  color: #2f3434;
+  height: 95px;
+  border-top: solid 1px #d1d7d7;
+  border-bottom: solid 1px #d1d7d7;
+  margin-top: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  margin-bottom: 20px;
+}
+.subTotal,
+.transportFee {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+}
+.cartTotal {
+  color: #2f3434;
+  font-size: 19px;
+  line-height: 16px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-bottom: 10px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
+.itemFromCart {
+  line-height: 14px;
+  font-size: 16px;
+}
+
+/* M-ITEM DU MENU*/
+
+.itemCard {
+  height: 150px;
+  width: 50%;
+}
+.courseListeItem {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  margin-bottom: 25px;
+}
+
+.itemContainer {
+  width: 400px;
+  height: 160px;
+  border-radius: 7px;
+  background-color: #fff;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  padding: 15px;
+  cursor: copy;
+  transition-duration: 0.6s;
+}
+.itemCard {
+  margin-bottom: 20px;
+  margin-top: 20px;
+}
+.itemContainer:hover {
+  box-shadow: 0px 22px 24px 0px rgba(43, 61, 61, 0.07);
+}
+
+.vignette {
+  width: 130px;
+  height: 130px;
+  object-fit: cover;
+  border-radius: 7px;
+}
+.itemCardLeft {
+  display: flex;
+  flex-direction: column;
+}
+
+.itemCardRight {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.prixCat {
+  display: flex;
+  flex-direction: row;
+}
+
+.courseTitle h2 {
+  color: #2e3333;
+  font-size: 24px;
+  line-height: 20px;
+  font-weight: bold;
+}
+
+.courseItemTitle {
+  color: #2e3333;
+  font-size: 18px;
+  line-height: 15.6px;
+  font-weight: regular;
+  margin-bottom: 15px;
+}
+.courseItemDescription {
+  color: #808484;
+  font-size: 14px;
+  line-height: 1.3rem;
+  height: 2.6rem;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+.courseItemZonePrix {
+  color: #808484;
+  font-size: 17px;
+  line-height: 14.7px;
+  font-weight: regular;
+}
+.prixCat {
+  margin-top: 15px;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  margin-right: 30px;
+}
+.itemPopular {
+  color: orange;
+  font-weight: bold;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+.lineItemCart {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  margin-top: 15px;
+  justify-content: space-between;
+}
+.lineAdjust {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.lineItemCart svg {
+  color: #03cdbd;
+  margin-left: 5px;
+  margin-right: 5px;
+}
+.CartLinePrice {
+  display: flex;
+  flex-direction: row;
+  width: max-content;
+  white-space: nowrap;
+}
+.CartLinePrice p {
+  text-align: right;
+}
+.CartLineLib {
+  padding-right: 20px;
 }
