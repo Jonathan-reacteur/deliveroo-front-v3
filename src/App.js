@@ -8,15 +8,8 @@ import Menu from "./components/Menu.js";
 import MenuLoader from "./components/MenuLoader.js";
 
 function App() {
-  const itemTest = {
-    priceItem: 30,
-    idItem: "azeaze",
-    libItem: "Baguette de pain gratuite",
-    quantity: 1,
-  };
-
   const [data, setData] = useState();
-  const [cart, setCart] = useState([itemTest]);
+  const [cart, setCart] = useState([]);
   const [isLoaded, setIsLoaded] = useState(false);
   //
   useEffect(() => {
